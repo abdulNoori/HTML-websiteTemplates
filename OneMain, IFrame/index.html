@@ -1,0 +1,38 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css" type="text/css"/>
+        <script src="/jquery-3.1.1.js"></script>
+    </head>
+    <body>
+<!--        Header-->
+        <div id="header">
+<!--            Menu-->
+            <div id="menu">
+<!--                Menu Icon-->
+                <div id="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <ul>
+<!--                    Items; Source Page In data-src Attrabute-->
+                    <li data-src="trimp.html">Trimp</li>
+                    <li data-src="hurlery.html">Hurlery</li>
+                </ul>
+            </div>
+<!--            Title-->
+            <h1>Trimp Vs Hurlery</h1>
+        </div>
+<!--        Page; Current CSS Does NOT Affect This Page-->
+        <iframe id="page" src="pages/default.html"></iframe>
+        <script>
+            $(document).ready(function(){
+                $('#hamburger').click(function(){
+                    $(this).toggleClass('open');
+                });
+            });
+        </script>
+    </body>
+</html>
