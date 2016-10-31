@@ -51,7 +51,6 @@
             //Keeps Page On Reload
             $(window).on("load", function(e){
                 var loc = window.location.hash.replace("#", "").split(",");
-                alert(loc[0] + "," + loc [1]);
                 if(!loc[0] == ""){
                     $("#page").attr('src', "pages/" + loc[0]);
                     document.title = loc[1];
