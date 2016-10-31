@@ -35,12 +35,8 @@
         <script>
             //Opens The Menu
             function openMenu(e){
-                alert($("#menu").hasClass("hover"));
-                if($("#menu").hasClass("hover")){
-                    $("#menu").removeClass("hover");
-                }else{
-                    $("#menu").addClass("hover");
-                }
+                alert($("#menu").attr("class"));
+                $("#menu").toggleClass("hover");
             }
             //Sets IFrame Height
             var size = $(window).height() - $("#title").height();
