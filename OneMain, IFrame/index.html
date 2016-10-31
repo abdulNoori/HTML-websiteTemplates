@@ -35,10 +35,9 @@
         <script>
             //Opens The Menu
             function openMenu(e){
-                alert("click");
+                alert($("#menu").hasClass("hover"));
                 if($("#menu").hasClass("hover")){
                     $("#menu").removeClass("hover");
-alert("has hover");
                 }else{
                     $("#menu").addClass("hover");
                 }
