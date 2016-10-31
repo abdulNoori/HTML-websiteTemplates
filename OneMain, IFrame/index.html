@@ -1,37 +1,64 @@
 <!DOCKTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css" type="text/css"/>
+<!--        100% Zoomed-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--        Default Title-->
+        <title>One Page Fits All</title>
+<!--        Style Sheet-->
+        <link href="styles.css" type="text/css" rel="stylesheet">
+<!--        JQuery-->
         <script src="/jquery-3.1.1.js"></script>
     </head>
     <body>
-<!--        Header-->
-        <div id="header">
-<!--            Menu-->
-            <div id="menu">
-<!--                Menu Icon-->
-                <div id="hamburger">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
+<!--        Menu-->
+        <div id="menu">
+<!--            Menu Icon-->
+            <h1 id="menuicon" onclick="openMenu()">&#9776;</h1>
+<!--            Menu Items-->
+            <div id="menuitems">
                 <ul>
-<!--                    Items; Source Page In data-src Attrabute-->
-                    <li data-src="trimp.html">Trimp</li>
-                    <li data-src="hurlery.html">Hurlery</li>
+<!--                    Pages-->
+                    <li><a href="#hurlery.html,Hurlery">Hurlery</a></li>
+                    <li><a href="#trimp.html,Trimp">Trimp</a></li>
+                    <li><a href="#turnip.html,Turnip">Turnip</a></li>
+                    <li><a href="#canada.html,Canada">Canada</a></li>
                 </ul>
             </div>
-<!--            Title-->
-            <h1>Trimp Vs Hurlery</h1>
         </div>
-<!--        Page; Current CSS Does NOT Affect This Page-->
-        <iframe id="page" src="pages/default.html"></iframe>
+        <div id="title">
+<!--            Title-->
+            <h1>Hurlery vs Trimp</h1>
+        </div>
+<!--        Iframe For The Page-->
+        <iframe src="pages/default.html" id="page"></iframe>
         <script>
-            $(document).ready(function(){
-                $('#hamburger').click(function(){
-                    $(this).toggleClass('open');
-                });
+            //Opens The Menu
+            function openMenu(e){
+                if($("#menu").hasClass("hover")){
+                    $("#menu").removeClass("hover");
+                }else{
+                    $("#menu").addClass("hover");
+                }
+            }
+            //Sets IFrame Height
+            var size = $(window).height() - $("#title").height();
+            $("#page").height(size);
+            //Checks For URL Chane, And Changes Page
+            $(window).on('hashchange', function(e){
+                var loc = window.location.hash.replace("#", "").split(",");
+                if(!loc == ""){
+                    $("#page").attr('src', "pages/" + loc[0]);
+                    document.title = loc[1];
+                }
+            });
+            //Keeps Page On Reload
+            $(window).on("load", function(e){
+                var loc = window.location.hash.replace("#", "").split(",");
+                if(!loc == ""){
+                    $("#page").attr('src', "pages/" + loc[0]);
+                    document.title = loc[1];
+                }
             });
         </script>
     </body>

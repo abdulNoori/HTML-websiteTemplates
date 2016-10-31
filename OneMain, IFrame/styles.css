@@ -1,58 +1,110 @@
 body{
+    background-color: white;
+    margin: 0px;
+    margin-left: 0%;
+    overflow: hidden;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+#menu{
+    width: 3em;
+    height: 3em;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: .5em;
+    background-color: none;
+    color: aliceblue;
+    cursor: copy;
+    border-radius: 100px;
+    transition-property: width, height, background, color, border-radius;
+    transition-delay: 1s, 0s, 1s, 1s, 1.5s;
+    transition-duration: 1s, 1s, 2s, 3s, 1s;
+    overflow: hidden;
+}
+#menu.hover{
+    border-radius: 0px;
+    color: black;
+    background-color: #f1f1f1;
+    transition-property: width, height, background, color, border-radius;
+    transition-delay: 0s, 1s, 0s, 0s, 0s;
+    transition-duration: 1s, 1s, 2s, 2s, 1;
+    width: 20%;
+    height: 15em;
+}
+#menuicon{
+    margin-bottom: .5em;
+}
+@media screen and (max-device-width: 768px){
+    #menu.hover{
+        border-radius: 0px;
+        color: black;
+        background-color: #f1f1f1;
+        transition-property: width, height, background, color, border-radius;
+        transition-delay: 0s, 1s, 0s, 0s, 0s;
+        transition-duration: 1s, 1s, 2s, 2s, 1;
+        width: 35%;
+        height: 15em;
+    }
+}
+@media screen and (max-device-width: 425px){
+    #menu.hover{
+        border-radius: 0px;
+        color: black;
+        background-color: #f1f1f1;
+        transition-property: width, height, background, color, border-radius;
+        transition-delay: 0s, 1s, 0s, 0s, 0s;
+        transition-duration: 1s, 1s, 2s, 2s, 1;
+        width: 100%;
+        height: 15em;
+    }
+}
+
+#menuitems{
+    margin: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    color: black;
+}
+#menuitems ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto; 
+}
+#menuitems ul li a{
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+#menuitems li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+h1, h2, h3, h4, h5{
+    text-align: center;
     margin: 0px;
 }
 
-#hamburger {
-  width: 60px;
-  height: 45px;
-  position: relative;
-  margin: 50px auto;
-  transform: rotate(0deg);
-  transition: .5s ease-in-out;
-  cursor: pointer;
+#title{
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    height: 4em;
+    line-height: 4em;
 }
 
-#hamburger span {
-  display: block;
-  position: absolute;
-  height: 9px;
-  width: 100%;
-  background: #d3531a;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: .25s ease-in-out;
-}
-
-#hamburger span:nth-child(1) {
-  top: 0px;
-}
-
-#hamburger span:nth-child(2),#hamburger span:nth-child(3) {
-  top: 18px;
-}
-
-#hamburger span:nth-child(4) {
-  top: 36px;
-}
-
-#hamburger.open span:nth-child(1) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
-}
-
-#hamburger.open span:nth-child(2) {
-  transform: rotate(45deg);
-}
-
-#hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-#hamburger.open span:nth-child(4) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
+#page{
+    height: 90%;
+    width: 100%;
+    border: none;
 }
