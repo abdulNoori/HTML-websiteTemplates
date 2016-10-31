@@ -35,7 +35,6 @@
         <script>
             //Opens The Menu
             function openMenu(e){
-                alert($("#menu").attr("class") + "helo");
                 $("#menu").toggleClass("hover");
             }
             //Sets IFrame Height
@@ -55,6 +54,8 @@
                 if(!loc == ""){
                     $("#page").attr('src', "pages/" + loc[0]);
                     document.title = loc[1];
+                }else{
+                   $("#page").attr('src', "pages/default.html");
                 }
             });
         </script>
