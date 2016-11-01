@@ -107,6 +107,7 @@ h1, h2, h3, h4, h5{
 }
 
 #page{
-    max-height: 90vh;
+    max-height: 20vh;
+    min-height: 20vh;
     width: 100%;
 }
