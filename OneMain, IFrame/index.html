@@ -39,6 +39,7 @@
             }
             //Sets IFrame Height
             var size = $(window).height() - $("#title").height();
+            alert(size);
             $("#page").height(size);
             //Checks For URL Chane, And Changes Page
             $(window).on('hashchange', function(e){
