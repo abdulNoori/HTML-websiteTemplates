@@ -3,6 +3,7 @@ body{
     margin: 0px;
     margin-left: 0%;
     overflow: hidden;
+    max-height: 100%;
 }
 
 a{
