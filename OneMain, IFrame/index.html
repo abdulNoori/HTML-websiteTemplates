@@ -38,8 +38,8 @@
                 $("#menu").toggleClass("hover");
             }
             //Sets IFrame Height
-            var size = screen.height - $("#title").height();
-            alert(screen.height);
+            var size = $(window).height(); - $("#title").height();
+            alert($(window).height(););
             alert($("#title").height());
             $("#page").style('max-height', size + 'px');
             //Checks For URL Chane, And Changes Page
