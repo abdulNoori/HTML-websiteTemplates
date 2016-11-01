@@ -39,7 +39,8 @@
             }
             //Sets IFrame Height
             var size = screen.height - $("#title").height();
-            alert(size);
+            alert(screen.height);
+            alert($("#title").height());
             $("#page").style('max-height', size + 'px');
             //Checks For URL Chane, And Changes Page
             $(window).on('hashchange', function(e){
