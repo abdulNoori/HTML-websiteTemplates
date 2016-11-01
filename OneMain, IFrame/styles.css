@@ -16,7 +16,7 @@ a{
 #menu{
     width: 3em;
     height: 3em;
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0px;
     padding: .5em;
